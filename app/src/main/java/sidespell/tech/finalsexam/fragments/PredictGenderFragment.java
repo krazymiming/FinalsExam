@@ -60,6 +60,9 @@ public class PredictGenderFragment extends Fragment implements View.OnClickListe
         String name = mEtName.getText().toString();
 
         // TODO: Appropriately execute getting the gender info task in a background thread
+        GetGenderTask task = new GetGenderTask();
+        task.execute();
+
         if (TextUtils.isEmpty(name)) {
             mEtName.setError(getContext().getString(R.string.txt_enter_name));
         } else {
@@ -84,6 +87,7 @@ public class PredictGenderFragment extends Fragment implements View.OnClickListe
             }
 
             // TODO: Implement the logic to get the gender given a specified name
+
             return null;
         }
 
